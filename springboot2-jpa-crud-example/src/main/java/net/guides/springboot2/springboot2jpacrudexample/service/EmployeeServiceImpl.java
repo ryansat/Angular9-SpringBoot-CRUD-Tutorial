@@ -13,31 +13,31 @@ import net.guides.springboot2.springboot2jpacrudexample.repository.EmployeeRepos
 public class EmployeeServiceImpl implements EmployeeService{
 
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private EmployeeRepository employeeRepo;
 	
 	@Override
 	public List<Employee> getAllEmployees() {
-		return this.employeeRepository.findAll();
+		return this.employeeRepo.findAll();
 	}
 
 	@Override
 	public Optional<Employee> getEmployeeById(Long employeeId) {
-		return this.employeeRepository.findById(employeeId);
+		return this.employeeRepo.findById(employeeId);
 	}
 
 	@Override
 	public Employee createEmployee(Employee employee) {
-		return this.employeeRepository.save(employee);
+		return this.employeeRepo.save(employee);
 	}
 
 	@Override
 	public Employee updateEmployee(Employee employeeDetails) {
-		return this.employeeRepository.save(employeeDetails);
+		return this.employeeRepo.save(employeeDetails);
 	}
 
 	@Override
 	public void deleteEmployee(Employee employee) {
-		this.employeeRepository.delete(employee);
+		this.employeeRepo.delete(employee);
 	}
 
 }
